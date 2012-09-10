@@ -1,0 +1,2 @@
+jQuery-Plugin-Boilerplate
+=========================
