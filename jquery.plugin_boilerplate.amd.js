@@ -1,4 +1,17 @@
-;(function($, ns, window, document, undefined) {
+;(function(factory) {
+	// translate arguments object to normal array
+	var args = Array.prototype.slice.call(arguments, 1);
+
+	// TODO: test with RequireJS
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+        
+    } else {
+        // Browser globals
+        factory.apply(this, args);
+    }
+}(function($, ns, window, document, undefined) {
 	ns = ns || 'plugin';
 
 	var _v = {};
@@ -197,4 +210,4 @@
 	 */
 	$.fn[ns].options = {};
 
-})(jQuery, 'pluginName', window, document);
+}, jQuery, 'pluginName', window, document));
